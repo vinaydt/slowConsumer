@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <move file="/home/abc/vinay/eclipseWorkspace/SlowConsumer/target/SlowConsumer-0.0.1-SNAPSHOT-apexapp.jar" tofile="/home/abc/vinay/eclipseWorkspace/SlowConsumer/target/SlowConsumer-0.0.1-SNAPSHOT.apa"/>
+</target>
+</project>
