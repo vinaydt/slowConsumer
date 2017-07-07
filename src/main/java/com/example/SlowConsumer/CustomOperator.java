@@ -2,22 +2,12 @@ package com.example.SlowConsumer;
 
 import java.io.PrintStream;
 
-import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.api.DefaultInputPort;
-import com.datatorrent.common.partitioner.StatelessPartitioner;
 import com.datatorrent.common.util.BaseOperator;
 
 public class CustomOperator extends BaseOperator {
 
 	private transient PrintStream stream = System.out;
-
-/*	@Override
-	public void setup(OperatorContext context) {
-		StatelessPartitioner<CustomOperator> sp = new StatelessPartitioner<CustomOperator>();
-		sp.setPartitionCount(noOfPartitions);
-		System.out.println("CO::setup No of paritions are "+sp.getPartitionCount());
-		super.setup(context);
-	}*/
 
 	private boolean print = false;
 	private int groupOfTuples = 1000;
