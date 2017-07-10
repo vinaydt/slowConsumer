@@ -9,7 +9,7 @@ public class CustomOperator extends BaseOperator {
 
 	private transient PrintStream stream = System.out;
 
-	private boolean print = true;
+	private boolean print = false;
 	private int groupOfTuples = 1000;
 	private int delayInterval = 1;
 	private int count = 0;
