@@ -12,12 +12,21 @@ import com.datatorrent.common.util.BaseOperator;
  */
 public class RandomNumberGenerator extends BaseOperator implements InputOperator {
 
-	public final int noOfPartitions = 5;
-	public final transient DefaultOutputPort<Double> out = new DefaultOutputPort<Double>();
+	public final transient DefaultOutputPort<String> out = new DefaultOutputPort<String>();
 
+	private int count = 0;
+	
+	private int maxTuplesPerWindow = 50000;
+	
+	@Override
+	public void beginWindow(long windowId) {
+		count = 0;
+	}
+	
 	@Override
 	public void emitTuples() {
-		out.emit(Math.random());
+		if(count++<maxTuplesPerWindow)
+			out.emit(Double.toString(Math.random()));
 	}
 
 }

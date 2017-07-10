@@ -9,11 +9,10 @@ public class CustomOperator extends BaseOperator {
 
 	private transient PrintStream stream = System.out;
 
-	private boolean print = false;
+	private boolean print = true;
 	private int groupOfTuples = 1000;
 	private int delayInterval = 1;
 	private int count = 0;
-	public int noOfPartitions = 3;
 
 	public int getDelayInterval() {
 		return this.delayInterval;
@@ -27,18 +26,14 @@ public class CustomOperator extends BaseOperator {
 		return this.groupOfTuples;
 	}
 
-	public void setNoOfTuples(int noOfTuples) {
-		this.groupOfTuples = noOfTuples;
-	}
-
 	@Override
 	public void beginWindow(long windowId) {
 		count = 0;
 	}
 
-	public final transient DefaultInputPort<Double> input = new DefaultInputPort<Double>() {
+	public final transient DefaultInputPort<String> input = new DefaultInputPort<String>() {
 		@Override
-		public void process(Double t) {
+		public void process(String t) {
 			try {
 				slowConsumer(t);
 			} catch (InterruptedException e) {
@@ -47,7 +42,7 @@ public class CustomOperator extends BaseOperator {
 		}
 	};
 
-	protected void slowConsumer(Double s) throws InterruptedException {
+	protected void slowConsumer(String s) throws InterruptedException {
 		if (count++ % getNoOfTuples() == 0)
 			Thread.sleep(getDelayInterval());
 

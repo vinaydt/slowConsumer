@@ -1,4 +1,6 @@
-com/example/SlowConsumer/RandomNumberGenerator.class
+com/example/SlowConsumer/PassthroughOperator$1.class
 com/example/SlowConsumer/CustomOperator$1.class
-com/example/SlowConsumer/CustomOperator.class
 com/example/SlowConsumer/Application.class
+com/example/SlowConsumer/PassthroughOperator.class
+com/example/SlowConsumer/RandomNumberGenerator.class
+com/example/SlowConsumer/CustomOperator.class

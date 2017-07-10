@@ -9,8 +9,16 @@
  		<value>2560</value>
 	</property>
 	<property>
+ 		<name>dt.application.MyFirstApplication.operator.passthrough.attr.MEMORY_MB</name> 
+ 		<value>2560</value>
+	</property>
+	<property>
   		<name>dt.application.MyFirstApplication.operator.randomGenerator.attr.PARTITIONER</name>
  	     <value>com.datatorrent.common.partitioner.StatelessPartitioner:3</value>
+	</property>
+	<property>
+  		<name>dt.application.MyFirstApplication.operator.passthrough.attr.PARTITIONER</name>
+ 	     <value>com.datatorrent.common.partitioner.StatelessPartitioner:4</value>
 	</property>
 	<property>
   		<name>dt.application.MyFirstApplication.operator.console.attr.PARTITIONER</name>
