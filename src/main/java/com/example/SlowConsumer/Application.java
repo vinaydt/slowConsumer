@@ -17,7 +17,7 @@ public class Application implements StreamingApplication {
 		// Sample DAG with 3 operators
 		// Replace this code with the DAG you want to build
 
-		RandomNumberGenerator randomGenerator = dag.addOperator("randomGenerator", RandomNumberGenerator.class);
+		RandomStringGenerator randomGenerator = dag.addOperator("randomGenerator", RandomStringGenerator.class);
 		
 		PassthroughOperator passthroughOperator = dag.addOperator("passthrough", new PassthroughOperator());
 
