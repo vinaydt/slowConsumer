@@ -5,11 +5,11 @@ import com.datatorrent.api.DefaultOutputPort;
 import com.datatorrent.common.util.BaseOperator;
 
 public class PassthroughOperator extends BaseOperator {
-	
+
 	private int groupOfTuples = 1000;
 	private int delayInterval = 1;
 	private int count = 0;
-	
+
 	public int getDelayInterval() {
 		return this.delayInterval;
 	}
@@ -22,17 +22,21 @@ public class PassthroughOperator extends BaseOperator {
 		return this.groupOfTuples;
 	}
 
+	public void setGroupOfTuples(int groupOfTuples) {
+		this.groupOfTuples = groupOfTuples;
+	}
+
 	@Override
 	public void beginWindow(long windowId) {
 		count = 0;
 	}
-	
+
 	protected void slowConsumer(String s) throws InterruptedException {
 		if (count++ % getNoOfTuples() == 0)
 			Thread.sleep(getDelayInterval());
 
 	}
-	
+
 	public final transient DefaultInputPort<String> input = new DefaultInputPort<String>() {
 		@Override
 		public void process(String tuple) {

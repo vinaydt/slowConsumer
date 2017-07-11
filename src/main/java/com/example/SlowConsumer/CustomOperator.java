@@ -26,6 +26,10 @@ public class CustomOperator extends BaseOperator {
 		return this.groupOfTuples;
 	}
 
+	public void setGroupOfTuples(int groupOfTuples) {
+		this.groupOfTuples = groupOfTuples;
+	}
+
 	@Override
 	public void beginWindow(long windowId) {
 		count = 0;
